@@ -12,7 +12,14 @@ void moduleDetails(int i, int moduleNumber, char moduleName[][50], int moduleMar
     for (i; i < moduleNumber; i++){
         printf("Type module name AND mark: \n");
         scanf("%s %d", moduleName[i], &moduleMark[i]);
-        
+        while (1){
+            if(moduleMark[i] >= 0 && moduleMark[i] <= 100){
+                break;  
+            }else{
+                printf("mark needs to be between 0 and 100, type mark again: \n");
+                scanf("%d",&moduleMark[i]);
+            }
+        }
     }
 }
 
@@ -47,10 +54,11 @@ void displayResults (int i, char firstName[50], char lastName[50], char moduleNa
         printf("%s %d\n", moduleName[i], moduleMark[i]);
     }
 
+    printf("------------------------------------\n");
     printf("Grade Average:%.2f\n", gradeAve);
 
     if (achievedGrade == 1){
-        printf("Student achieved A 1st");
+        printf("Student achieved A 1st \n");
         printf("Student recieved an award");
     } else if (achievedGrade == 2){
         printf("Student achieved A 2.1");
