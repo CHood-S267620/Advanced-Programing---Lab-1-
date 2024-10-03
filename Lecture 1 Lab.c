@@ -40,15 +40,18 @@ int overallGrade(float gradeAve,  int overall){
     return overall;
 }
 
-void displayResults (int i, char firstName[50], char lastName[50], char moduleName[5][50], int moduleMark[], int moduleNumber, int achievedGrade){
+void displayResults (int i, char firstName[50], char lastName[50], char moduleName[5][50], int moduleMark[], int moduleNumber, float gradeAve, int achievedGrade){
     printf("Student: %s %s\n",firstName, lastName);
     printf("---------------Grades---------------\n");
     for (i; i < moduleNumber; i++){
         printf("%s %d\n", moduleName[i], moduleMark[i]);
     }
 
+    printf("Grade Average:%.2f\n", gradeAve);
+
     if (achievedGrade == 1){
         printf("Student achieved A 1st");
+        printf("Student recieved an award");
     } else if (achievedGrade == 2){
         printf("Student achieved A 2.1");
     } else if (achievedGrade == 3){
@@ -85,7 +88,7 @@ int main() {
     int achievedGrade = overallGrade(gradeAve, overall);
     //printf("Student achieved a: %d\n", achievedGrade);
 
-    displayResults(i, firstName, lastName, moduleName, moduleMark, moduleNumber, achievedGrade);
+    displayResults(i, firstName, lastName, moduleName, moduleMark, moduleNumber, gradeAve, achievedGrade);
 
 
     return 0;
