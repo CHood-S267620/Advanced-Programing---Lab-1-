@@ -1,4 +1,4 @@
-// Online C compiler to run C program online
+
 #include <stdio.h>
 //C:\Users\Cameron\Documents\"Uni stuff"\"Year 2"\"Advanced Programing"\"Lecture 1 Lab.exe"
 char studentDetails(char firstName[50], char lastName[50]){
